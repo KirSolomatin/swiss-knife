@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SwissKnife.TextMorse
 {
-    public class TextMorse
+    internal class TextMorse
     {
         public static void Run()
         {

@@ -34,7 +34,10 @@ namespace SwissKnife
                         TextMorse.TextMorse.Run();
                         active = false;
                         break;
-
+                    case "2":
+                        MorseText.Run();
+                        active = false;
+                        break;
                     default:
                         Console.WriteLine("Choix invalide");
                         Console.ReadKey();
