@@ -9,14 +9,32 @@ namespace SwissKnife.Conversion
         public static void Run()
         {
             //Empty variable to store phrase after translation
-            string result = "";
+            string reversedResult = "";
 
             Console.Write("Nombre décimal : ");
 
             //Variable stores user's phrase
-            string number;
+            int number;
 
-            bool numberIsInt = int.TryParse(Console.ReadLine(), out result);
+            bool numberIsInt = int.TryParse(Console.ReadLine(), out number);
+
+            while (number > 1)
+            {
+                reversedResult += number % 2;
+
+                number = number / 2;
+            }
+
+            reversedResult += number;
+
+            string finalResult = "";
+
+            for (int i = reversedResult.Length - 1; i >= 0; i--)
+            {
+                finalResult += reversedResult[i];
+            }
+
+            Console.WriteLine($"Résultat : {finalResult}");
         }
     }
 }

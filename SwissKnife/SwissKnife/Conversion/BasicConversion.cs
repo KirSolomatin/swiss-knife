@@ -20,10 +20,22 @@ namespace SwissKnife.Conversion
             Console.WriteLine("7. Décimal => Hexadécimal");
             Console.WriteLine("8. Hexadécimal => Décimal");
 
-            Console.Write("Votre choix: 1");
+            Console.Write("Votre choix: ");
             //Variable stores user's phrase
-            string choice = Console.ReadLine();
+            int choice;
             //Empty variable to store phrase after translation
+
+            bool choiceIsValide = int.TryParse(Console.ReadLine(), out choice);
+
+            if (choice > 0 && choice < 8)
+            {
+                switch (choice)
+                {
+                    case 1:
+                        DecimalBinary.Run();
+                        break;
+                }
+            }
         }
     }
 }
