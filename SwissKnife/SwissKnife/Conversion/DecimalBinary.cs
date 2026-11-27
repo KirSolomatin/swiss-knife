@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace SwissKnife.Conversion
@@ -18,23 +19,31 @@ namespace SwissKnife.Conversion
 
             bool numberIsInt = int.TryParse(Console.ReadLine(), out number);
 
-            while (number > 1)
+            if (numberIsInt)
             {
-                reversedResult += number % 2;
+                while (number > 1)
+                {
+                    reversedResult += number % 2;
 
-                number = number / 2;
+                    number = number / 2;
+                }
+
+                reversedResult += number;
+
+                string finalResult = "";
+
+                for (int i = reversedResult.Length - 1; i >= 0; i--)
+                {
+                    finalResult += reversedResult[i];
+                }
+
+                Console.WriteLine($"Résultat : {finalResult}");
+            }
+            else
+            {
+                Console.WriteLine("Votre nombre ne doit pas contenir les lettres");
             }
 
-            reversedResult += number;
-
-            string finalResult = "";
-
-            for (int i = reversedResult.Length - 1; i >= 0; i--)
-            {
-                finalResult += reversedResult[i];
-            }
-
-            Console.WriteLine($"Résultat : {finalResult}");
         }
     }
 }

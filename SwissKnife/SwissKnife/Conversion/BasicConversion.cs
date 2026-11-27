@@ -34,6 +34,9 @@ namespace SwissKnife.Conversion
                     case 1:
                         DecimalBinary.Run();
                         break;
+                    case 2:
+                        BinaryDecimal.Run();
+                        break;
                 }
             }
         }
