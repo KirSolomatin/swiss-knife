@@ -26,6 +26,7 @@ namespace SwissKnife.Conversion
                 //We multiply each digit of the binary number by the corresponding power of two
                 for (int i = 0; i < Convert.ToString(number).Length; i++)
                 {
+                    //We subtract 48 because when we convert a string to a number, we get the character's value in the ASCII table
                     int digit = Convert.ToString(number)[i] - 48;
                     //Check if digit of number is binary
                     if (digit == 1 || digit == 0)

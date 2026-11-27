@@ -16,7 +16,7 @@ namespace SwissKnife.Conversion
 
             //Variable stores user's phrase
             int number;
-
+            //Check if number is int
             bool numberIsInt = int.TryParse(Console.ReadLine(), out number);
 
             if (numberIsInt)
